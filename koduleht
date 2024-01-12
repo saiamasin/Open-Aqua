@@ -3,68 +3,60 @@
 <head>
   <title>OpenAqua</title>
   <style>
-    /* CSS styles go here */
     body {
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-      background-color: #e5e5e5;
-      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #F0F8FF; /* Light blue background color */
+    }
+
+    header {
+      background-color: #008080; /* Dark teal header background color */
       padding: 20px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
+      color: white;
     }
 
     h1 {
-      text-align: center;
-      color: #a80000;
-      margin-bottom: 30px;
+      margin: 0;
+    }
+
+    main {
+      padding: 20px;
     }
 
     .box {
-      width: 200px;
-      height: 150px;
-      background-color: #ffffff;
-      border: 1px solid #cccccc;
-      border-radius: 5px;
-      margin: 10px;
-      padding: 10px;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-      transition: box-shadow 0.3s ease-in-out;
+      background-color: #FFF;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
     }
 
-    .box:hover {
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
-    }
 
-    h2 {
-      font-size: 18px;
-      color: #a80000;
-      margin-bottom: 10px;
-    }
-
-    .temperature {
-      font-size: 32px;
-      color: #a80000;
-      font-weight: bold;
-    }
   </style>
 </head>
 <body>
-  <h1>Welcome to OpenAqua</h1>
+  <header>
+    <h1>OpenAqua</h1>
+  </header>
 
-  <div class="box">
-    <h2>Temperature 1</h2>
-    <div class="temperature">23°C</div>
-  </div>
+<a href="http://cdn.geenet.eu/2.html"> 
+  <button style="background-color: #66b3ff; color: white; border: none; padding: 10px 20px; border-radius: 5px;"> Click me to view live camera feed!
+</button>
+</a>
 
-  <div class="box">
-    <h2>Temperature 2</h2>
-    <div class="temperature">19°C</div>
-  </div>
+  <main>
+    <div class="box">
+      <h2>25.5 C</h2>
+      <!-- Add temperature content here -->
+    </div>
 
-  <div class="box">
-    <h2>Temperature 3</h2>
-    <div class="temperature">27°C</div>
-  </div>
-</html> 
+    <div class="box">
+      <h2>25 C</h2>
+      <!-- Add other box content here -->
+    </div>
+
+    <div class="box">
+      <h2>Vee kvaliteet</h2>
+    </div>
+    <!-- Add more boxes as needed -->
+  </main>
+</body>
+</html>
