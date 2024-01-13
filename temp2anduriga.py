@@ -1,3 +1,6 @@
+import RPi.GPIO as GPIO
+import random
+
 #vahemiku kehtestamine
 low_limit= float(input("min: "))
 high_limit= float(input("max: "))
