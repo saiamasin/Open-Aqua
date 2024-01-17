@@ -5,58 +5,133 @@
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #F0F8FF; /* Light blue background color */
+      background-color: #F0F8FF;
     }
-
     header {
-      background-color: #008080; /* Dark teal header background color */
+      background-color: #008080;
       padding: 20px;
       color: white;
     }
-
     h1 {
       margin: 0;
     }
-
     main {
       padding: 20px;
     }
-
     .box {
       background-color: #FFF;
       border: 1px solid #ddd;
       padding: 20px;
       margin-bottom: 20px;
+      width: 200px;
     }
-
-
   </style>
 </head>
 <body>
   <header>
     <h1>OpenAqua</h1>
   </header>
-
-<a href="http://cdn.geenet.eu/2.html"> 
-  <button style="background-color: #66b3ff; color: white; border: none; padding: 10px 20px; border-radius: 5px;"> Click me to view live camera feed!
-</button>
-</a>
-
+  <a href="http://cdn.geenet.eu/2.html">
+    <button style="background-color: #66b3ff; color: white; border: none; padding: 10px 20px; border-radius: 5px;"> Click me to view live camera feed! </button>
+  </a>
   <main>
     <div class="box">
-      <h2>25.5 C</h2>
-      <!-- Add temperature content here -->
+      <h2 class="boxHeader">19</h2>
     </div>
-
     <div class="box">
-      <h2>25 C</h2>
-      <!-- Add other box content here -->
+      <h2 class="boxHeader">20</h2>
     </div>
-
     <div class="box">
-      <h2>Vee kvaliteet</h2>
+      <h2 class="boxHeader">26</h2>
     </div>
-    <!-- Add more boxes as needed -->
+  </main>
+  <script>
+    var boxes = document.querySelectorAll(".box");
+    var headers = document.querySelectorAll(".boxHeader");
+
+    headers.forEach(function(header) {
+      var value = parseInt(header.innerText);
+      if (value < 20 || value > 25) {
+        var box = header.closest(".box");
+        box.style.backgroundColor = "red";
+      }
+    });
+  </script>
+</body>
+</html>
+
+<html>
+<head>
+  <style>
+    .box-time {
+      background-color: #F0F8FF;
+      display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+      margin-bottom: 20px;
+    }
+    .time-container {
+      background-color: #EEE;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    .time-box {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .time {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+    .light-box {
+      width: 20px;
+      height: 20px;
+      border: 1px solid #F0F8FF;
+      margin-left: 10px;
+    }
+    .light-on {
+      background-color: white;
+    }
+    .light-off {
+      background-color: black;
+    }
+    aside {
+      position: absolute;
+  width: 20%;
+  padding-left: 15px;
+  margin-left: 15px;
+  right: 16px;
+  top: 90px;
+  font-style: italic;
+}
+  </style>
+</head>
+<body>
+  <main>
+    <aside>
+    <div class="box-time">
+      <div class="time-container">
+        <div class="time-box">
+          <div class="time">8:00</div>
+          <div class="light-box light-on"></div>
+        </div>
+        <div class="time-box">
+          <div class="time">14.00</div>
+          <div class="light-box light-off"></div>
+        </div>
+        <div class="time-box">
+          <div class="time">22:00</div>
+          <div class="light-box light-on"></div>
+        </div>
+      </div>
+    </div>
+    </aside>
   </main>
 </body>
 </html>
