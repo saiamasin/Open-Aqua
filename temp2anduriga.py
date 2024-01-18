@@ -1,11 +1,11 @@
 import RPi.GPIO as GPIO
 import random
 
-#vahemiku kehtestamine
+#vahemiku kehtestamine(siia input html lehelt)
 low_limit= float(input("min: "))
 high_limit= float(input("max: "))
 
-#inputi saamine 
+#inputi saamine (siia input gpio pinidelt(leida tapne pin ja asendada see inputina))
 input_temp1= float(input("input1:"))
 input_temp2= float(input("input2:"))
 
