@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>OpenAqua</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #F0F8FF;
+    }
+    header {
+      background-color: #008080;
+      padding: 20px;
+      color: white;
+    }
+    h1 {
+      margin: 0;
+    }
+    main {
+      padding: 20px;
+    }
+    .box {
+      background-color: #FFF;
+      border: 1px solid #ddd;
+      padding: 20px;
+      margin-bottom: 20px;
+      width: 200px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>OpenAqua</h1>
+  </header>
+  <a href="http://cdn.geenet.eu/2.html">
+    <button style="background-color: #66b3ff; color: white; border: none; padding: 10px 20px; border-radius: 5px;"> Click me to view live camera feed! </button>
+  </a>
+  <main>
+    <div class="box">
+      <h2 class="boxHeader">19</h2>
+    </div>
+    <div class="box">
+      <h2 class="boxHeader">20</h2>
+    </div>
+    <div class="box">
+      <h2 class="boxHeader">26</h2>
+    </div>
+  </main>
+  <script>
+    var boxes = document.querySelectorAll(".box");
+    var headers = document.querySelectorAll(".boxHeader");
+
+    headers.forEach(function(header) {
+      var value = parseInt(header.innerText);
+      if (value < 20 || value > 25) {
+        var box = header.closest(".box");
+        box.style.backgroundColor = "red";
+      }
+    });
+  </script>
+</body>
+</html>
+
+<html>
+<head>
+  <style>
+    .box-time {
+      background-color: #F0F8FF;
+      display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 300px;
+  height: 200px;
+  padding: 20px;
+      margin-bottom: 20px;
+    }
+    .time-container {
+      background-color: #EEE;
+      border-radius: 10px;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+    .time-box {
+      display: fixed;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .time {
+      font-size: 24px;
+      margin-right: 10px;
+    }
+    .light-box {
+      width: 20px;
+      height: 20px;
+      border: 1px solid #F0F8FF;
+      margin-left: 10px;
+    }
+    .light-on {
+      background-color: white;
+    }
+    .light-off {
+      background-color: black;
+    }
+    aside {
+      position: absolute;
+  width: 20%;
+  padding-left: 15px;
+  margin-left: 15px;
+  right: 16px;
+  top: 90px;
+  font-style: italic;
+}
+  </style>
+</head>
+<body>
+  <main>
+    <aside>
+        <div class="time-box">
+            <div class="time-container">
+            <div class="time-slot">
+            <label>Light On</label>
+            <input type="time">
+            </div>
+            <div class="time-slot">
+            <label>Light Off</label>
+            <input type="time">
+            </div>
+            </div>
+            </div>
+            
+            <style>   
+            
+            .time-box {
+            position: fixed;
+             top: 20;
+              right: 20;
+            }
+            
+            .time-container {
+            display: fixed;
+            }
+            
+            .time-slot {
+            flex: 1;
+            margin: 0 10px;
+            }
+            </style>
+    </aside>
+  </main>
+</body>
+</html>
