@@ -4,8 +4,8 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(18, GPIO.OUT)
 
 # Read temperature from file  
-with open('temperature.txt') as f:
-    temperature = float(f.read())
+with open('temperature.txt') as file:
+    temperature = float(file.read())
     
 # Set temperature range    
 max_temp = 25
