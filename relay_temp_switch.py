@@ -16,7 +16,7 @@ def read_temp_fromfile():
     return temperature
 
 def control_relay():
-    while running:
+    while True:
         temperature = read_temp_fromfile()
         if temperature >= 20 and temperature <= 25:
             relay_on()
