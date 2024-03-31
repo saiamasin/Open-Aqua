@@ -200,6 +200,11 @@
             box.style.backgroundColor = "var(--error-color)"; // Use CSS variable for error color
           }
         });
+        // for relay_light_switch server.js
+app.get('/getTime', (req, res) => {
+  const time = document.getElementById('onTime').value;
+  res.send(time);
+})
      </script>
 </body>
 </html>

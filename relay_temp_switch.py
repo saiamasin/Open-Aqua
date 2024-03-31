@@ -5,10 +5,10 @@ GPIO.setmode(GPIO.BCM)
 GPIO.setup(14, GPIO.OUT)
 
 def relay_on():
-    GPIO.output(14, GPIO.HIGH)
+    GPIO.output(13, GPIO.HIGH)
 
 def relay_off():
-    GPIO.output(14, GPIO.LOW)
+    GPIO.output(13, GPIO.LOW)
 
 def read_temp_fromfile():
     with open('temperature.txt') as file:
