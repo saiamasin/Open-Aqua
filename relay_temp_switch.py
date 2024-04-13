@@ -1,13 +1,13 @@
 import RPi.GPIO as GPIO
 import time
 
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(14, GPIO.OUT)
-
-def relay_on():
-    GPIO.output(13, GPIO.HIGH)
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(13, GPIO.OUT)
 
 def relay_off():
+    GPIO.output(13, GPIO.HIGH)
+
+def relay_on():
     GPIO.output(13, GPIO.LOW)
 
 def read_temp_fromfile():
@@ -20,13 +20,14 @@ def control_relay():
         temperature = read_temp_fromfile()
         if temperature >= 20 and temperature <= 25:
             relay_on()
+            time.sleep(10)
         elif temperature < 20:
             relay_off()
-            # print("Temperature is below 20 degrees Celsius. Waiting for 2 minutes...")
-            time.sleep(120)
+            print("Temperature is below 20 degrees Celsius. Waiting for 2 minutes...")
+            time.sleep(10)
         elif temperature > 25:
             relay_off()
-            # print("Temperature is above 25 degrees Celsius. Waiting for 2 minutes...")
+            print("Temperature is above 25 degrees Celsius. Waiting for 2 minutes...")
             while temperature > 25:
                 time.sleep(10)
                 temperature = read_temp_fromfile()
