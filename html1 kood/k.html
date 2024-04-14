@@ -1,13 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>OpenAqua</title>
-    <link rel="stylesheet" href="style.css">
-    
-</head>
-<title>OpenAqua</title>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>OpenAqua</title>
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
  <style>
     :root {
@@ -127,20 +123,6 @@
  padding-left: 15px;
  font-style: italic;
 }
-.time-box {
-            position: fixed;
-             top: 20;
-              right: 0;
-            }
-
-            .time-container {
-            display: fixed;
-            }
-
-            .time-slot {
-            flex: 1;
-            margin: 0 10px;
-            }
 
     @media screen and (max-width: 768px) {
       aside {
@@ -152,54 +134,54 @@
     }
 
  </style>
+</head>
 <body>
-    <nav>
-        <ul>
-            <li><a href="home.html">Home</a></li>
-            <li><a href="Blueprint.html">Blueprint</a></li>
-            <li><a href="contacts.html">Contacts</a></li>
-            <li><a href="n.html">Connect device</a></li>
-        </ul> 
-    </nav>
-    <main>
-        <a href="http://cdn.geenet.eu/2.html">
-          <button>Click me to view live camera feed!</button>
-        </a>
-        <div class="box">
-          <h2 class="boxHeader">19</h2>
-        </div>
-        <div class="box">
-          <h2 class="boxHeader">20</h2>
-        </div>
-        <div class="box">
-          <h2 class="boxHeader">26</h2>
-        </div>
-        <aside>
+ <header class="header">
+    <h1><a href="home.html" class="connect1">OpenAqua</a></h1>
+ </header>
+ <main>
+    <a href="http://cdn.geenet.eu/2.html">
+      <button>Click me to view live camera feed!</button>
+    </a>
+    <div class="box">
+      <h2 class="boxHeader">19</h2>
+    </div>
+    <div class="box">
+      <h2 class="boxHeader">20</h2>
+    </div>
+    <div class="box">
+      <h2 class="boxHeader">26</h2>
+    </div>
+    <aside>
+      <div class="box-time">
+        <div class="time-container">
           <div class="time-box">
-            <div class="time-container">
-            <div class="time-slot">
-            <label>Light On</label>
-            <input type="time">
-            </div>
-            <div class="time-slot">
-            <label>Light Off</label>
-            <input type="time">
-            </div>
-            </div>
-            </div>
-        </aside>
-     </main>
-    <script>
-        var boxes = document.querySelectorAll(".box");
-        var headers = document.querySelectorAll(".boxHeader");
-    
-        headers.forEach(function(header) {
-          var value = parseInt(header.innerText);
-          if (value < 20 || value > 25) {
-            var box = header.closest(".box");
-            box.style.backgroundColor = "var(--error-color)"; // Use CSS variable for error color
-          }
-        });
-     </script>
+            <div class="time">8:00</div>
+            <div class="light-box light-on"></div>
+          </div>
+          <div class="time-box">
+            <div class="time">14:00</div>
+            <div class="light-box light-off"></div>
+          </div>
+          <div class="time-box">
+            <div class="time">22:00</div>
+            <div class="light-box light-on"></div>
+          </div>
+        </div>
+      </div>
+    </aside>
+ </main>
+ <script>
+    var boxes = document.querySelectorAll(".box");
+    var headers = document.querySelectorAll(".boxHeader");
+
+    headers.forEach(function(header) {
+      var value = parseInt(header.innerText);
+      if (value < 20 || value > 25) {
+        var box = header.closest(".box");
+        box.style.backgroundColor = "var(--error-color)"; // Use CSS variable for error color
+      }
+    });
+ </script>
 </body>
 </html>
