@@ -146,8 +146,8 @@ border-radius: 50%;
     width: 800px;
     }
 
-/* CONTACTS IPHONE 14 PEAL*/
-@media only screen and (max-width: 400px){
+/* ALL IPHONE 12 PEAL*/
+@media only screen and (max-width: 390px){
     ul {
         margin-left: 2%;
     }
