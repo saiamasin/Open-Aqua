@@ -166,7 +166,7 @@
           <button>Click me to view live camera feed!</button>
         </a>
         <div class="box">
-          <h2 class="boxHeader">19</h2>
+          <h2 id="numberDipslay" class="boxHeader">Loading...</h2>
         </div>
         <aside>
           <div class="time-box">
@@ -194,6 +194,18 @@
             box.style.backgroundColor = "var(--error-color)"; // Use CSS variable for error color
           }
         });
+
+        window.onload = function() {
+            // Load the number from the file
+            fetch('temperature.txt')
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('numberDisplay').textContent = data;
+                })
+                .catch(error => {
+                    console.error('Error fetching number:', error);
+                });
+        };
      </script>
 </body>
 </html>
