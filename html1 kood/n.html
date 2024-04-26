@@ -165,8 +165,7 @@
         <a href="http://192.168.1.236:5000/video_feed">
           <button>Click me to view live camera feed!</button>
         </a>
-        <div class="box">
-          <h2 id="numberDipslay" class="boxHeader">Loading...</h2>
+        <div class="box" id="numberDisplay">Loading...
         </div>
         <aside>
           <div class="time-box">
@@ -184,28 +183,24 @@
         </aside>
      </main>
     <script>
-        var boxes = document.querySelectorAll(".box");
-        var headers = document.querySelectorAll(".boxHeader");
-    
-        headers.forEach(function(header) {
-          var value = parseInt(header.innerText);
-          if (value < 20 || value > 25) {
-            var box = header.closest(".box");
-            box.style.backgroundColor = "var(--error-color)"; // Use CSS variable for error color
-          }
-        });
-
-        window.onload = function() {
-            // Load the number from the file
-            fetch('temperature.txt')
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById('numberDisplay').textContent = data;
-                })
-                .catch(error => {
-                    console.error('Error fetching number:', error);
+    window.onload = function() {
+        // Load the number from the file
+        fetch('temperature.txt')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('numberDisplay').textContent = data;
+                var boxes = document.querySelectorAll(".box"); // Selecting boxes
+                boxes.forEach(function(box) {
+                    var value = parseInt(box.textContent.trim()); // Get the value from the box directly
+                    if (value < 20 || value > 25) {
+                        box.style.backgroundColor = "var(--error-color)"; // Use CSS variable for error color
+                    }
                 });
-        };
-     </script>
+            })
+            .catch(error => {
+                console.error('Error fetching number:', error);
+            });
+    };
+</script>
 </body>
 </html>
